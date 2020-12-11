@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLog.Web;
 
 namespace linetest
 {
@@ -19,17 +20,11 @@ namespace linetest
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args).ConfigureServices((context, services) =>
-            {
-                services.Configure<KestrelServerOptions>(
-                    context.Configuration.GetSection("Kestrel"));
-            }).ConfigureWebHostDefaults(webBuilder =>
-            {
-                //webBuilder.UseHttpSys(options =>
-                //{
-                //    options.UrlPrefixes.Add("http://10.10.10.220:5000");
-                //});
-                webBuilder.UseStartup<Startup>();
-            });
+            Host.CreateDefaultBuilder(args)
+                .UseNLog()
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
     }
 }
