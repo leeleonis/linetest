@@ -24,7 +24,6 @@ namespace linetest
             _httpContext = _httpContextAccessor.HttpContext;
             _lineBotConfig = lineBotConfig;
         }
-
         //完整的路由網址就是 https://xxx/api/linebot/run
         [HttpPost("run")]
         public async Task<IActionResult> Post()
