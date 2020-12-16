@@ -25,9 +25,9 @@ namespace linetest
         {
             services.AddSingleton<LineBotConfig, LineBotConfig>((s) => new LineBotConfig
             {
-                channelSecret = Configuration["LineBot:channelSecret"],
+                channelSecret =  Configuration["LineBot:channelSecret"],
                 accessToken = Configuration["LineBot:accessToken"]
-            });
+            }) ;
 
             services.AddHttpContextAccessor();
             services.AddRazorPages();
