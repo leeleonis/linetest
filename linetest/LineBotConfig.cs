@@ -9,5 +9,7 @@ namespace linetest
     {
         public string channelSecret { get; set; }
         public string accessToken { get; set; }
+        public string MSTranslatorTextKey { get; set; }
+        public string AdminUserId { get; set; }
     }
 }

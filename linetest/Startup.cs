@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using linetest.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -26,11 +27,14 @@ namespace linetest
             services.AddSingleton<LineBotConfig, LineBotConfig>((s) => new LineBotConfig
             {
                 channelSecret =  Configuration["LineBot:channelSecret"],
-                accessToken = Configuration["LineBot:accessToken"]
+                accessToken = Configuration["LineBot:accessToken"],
+                MSTranslatorTextKey = Configuration["LineBot:MSTranslatorTextKey"],
+                AdminUserId = Configuration["LineBot:AdminUserId"]
             }) ;
-
+            services.AddSingleton<List< MSTranslator>, List<MSTranslator>>((s) => new List<MSTranslator>());
             services.AddHttpContextAccessor();
             services.AddRazorPages();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,7 +46,7 @@ namespace linetest
             }
 
             app.UseRouting();
-
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
