@@ -34,7 +34,6 @@ namespace linetest
             services.AddSingleton<List< MSTranslator>, List<MSTranslator>>((s) => new List<MSTranslator>());
             services.AddHttpContextAccessor();
             services.AddRazorPages();
-            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,9 +43,7 @@ namespace linetest
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseRouting();
-            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

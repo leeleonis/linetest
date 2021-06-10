@@ -176,7 +176,7 @@ namespace linetest
                     }
                     else
                     {
-                        this.ReplyMessage(LineEvent.replyToken, 11538, 51626501);
+                        //this.ReplyMessage(LineEvent.replyToken, 11538, 51626501);
                     }
                 }
                 else
