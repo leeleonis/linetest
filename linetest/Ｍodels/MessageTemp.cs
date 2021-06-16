@@ -70,7 +70,18 @@ namespace linetest.Models
             {
                 Key = "/不早說",
                 uri = new Uri("https://i.imgur.com/wyTqq7Q.gif")
-            });       
+            });
+            list.Add(new ImgTemp
+            {
+                Key = "/父子",
+                uri = new Uri("https://i.imgur.com/jFzEq8g.jpg")
+            });
+            list.Add(new ImgTemp
+            {
+                Key = "/讚",
+                uri = new Uri("https://i.imgur.com/3EnpqZl.jpg")
+            });
+        
             return list;
         }
     }
