@@ -87,7 +87,7 @@ namespace linetest
                 {
                     if (LineEvent.message.type == "text")
                     {
-                        GoogleShee.SaveMsg(LineEvent.message.text);
+                        //GoogleShee.SaveMsg(LineEvent.message.text);
                         var ImgTemplist = MyFun.ImgTemplist();
                         if (LineEvent.message.text.StartsWith("/"))
                         {
