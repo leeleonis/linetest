@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Apis.Sheets.v4" Version="1.54.0.2371" />
     <PackageReference Include="Line.Messaging" Version="1.4.5" />
     <PackageReference Include="LineBotSDK" Version="2.4.32" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />

@@ -81,7 +81,12 @@ namespace linetest.Models
                 Key = "/讚",
                 uri = new Uri("https://i.imgur.com/3EnpqZl.jpg")
             });
-        
+            list.Add(new ImgTemp
+            {
+                Key = "/性騷擾",
+                uri = new Uri("https://i.imgur.com/xwRdCjm.jpg")
+            });
+
             return list;
         }
     }

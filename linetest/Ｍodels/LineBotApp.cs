@@ -34,7 +34,8 @@ namespace linetest
                         if (textMessage.Text.Contains("鴻銡"))
                         {
                             Msg = textMessage.Text + "看來是死定了";
-                        } else if (textMessage.Text.Contains("和和"))
+                        }
+                        else if (textMessage.Text.Contains("和和"))
                         {
                             Msg = textMessage.Text + "對方還在測試";
                         }
@@ -52,7 +53,7 @@ namespace linetest
                         }
                         else
                         {
-                            Msg =  "我老闆什麼都不會";
+                            Msg = "我老闆什麼都不會";
                         }
                         result = new List<ISendMessage> { new TextMessage(Msg) };
                         if (result != null)
